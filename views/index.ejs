@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>lobosia</title>
+
+ <style>
+
+body {
+      font-family:"Consolas";
+      background-image: linear-gradient(#000E31, #00A788);
+      margin: 0;
+      padding: 0;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+    
+    .title {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 24px;
+      position: relative;
+      
+      
+    }
+
+    .logo {
+      position: absolute;
+      top: 10px;
+    }
+
+    .logo-left {
+      left: 10px;
+    }
+
+    .logo-right {
+      right: 10px;
+    }
+    
+    .content-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 20px;
+      padding: 20px;
+      background-image: linear-gradient(#00A788,#000E31);
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-container {
+      flex: 1;
+      padding: 0 100px;
+      
+    }
+    
+    .form-container label {
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;
+      
+    }
+    
+    .form-container input,
+.form-container select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0px;
+  border: none;
+  border-bottom: 2px solid #00aaff;
+  background-color: rgba(4, 226, 255, 0);
+  color: #00ccff;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-container input::placeholder,
+.form-container select::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-bottom: 2px solid #00e5ff;
+  background-color: rgba(255, 255, 255, 0);
+  transform: scale(1.02);
+}
+
+.form-container input[type="submit"] {
+  background-color: #00aaff;
+  color: #00000000;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #00e5ff;
+}
+
+    .form-container button {
+      display: block;
+      width: 105%;
+      padding: 10px;
+      margin-top: 15px;
+      background: #00A788;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: .5s;
+      display: inline-block;
+      overflow: hidden;
+      text-decoration: none;
+      text-transform: uppercase;
+      box-shadow: 0 0 5px #00ccff, 0 0 5px #00ccff, 0 0 5px #00ccff, 0 0 5px #00ccff;
+      
+            
+    }
+    
+    .form-container button:hover {
+      background-color: #00ccff;
+    }
+    
+    .video-container {
+      flex: 2;
+      padding-left: 80px;
+      margin-top: 50px; 
+    }
+    
+    iframe {
+      width: 100%;
+      border: none;
+    }
+
+    .logo-right {
+  width: 35px;
+  height: auto;
+  position: absolute;
+  top: -9px;
+  right: 20px;
+  border: 3px solid transparent; 
+  border-radius: 50%; 
+  animation: spin 4s linear infinite, glow 2s ease-in-out infinite; 
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    border-color: transparent;
+    box-shadow: 0 0 10px rgb(255, 255, 255); 
+  }
+  50% {
+    border-color: rgb(9, 202, 154); 
+    box-shadow: none; 
+  }
+}
+
+.logo-left {
+  width: 120px;
+  left: 20px;
+  top: 0px;
+  
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+h1 {
+  font-family: 'Exo 2', sans-serif;
+  margin: 20px;
+  top: 0;
+  left: 0;
+  font-size: 40px; 
+  font-weight: bold; 
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(
+    0deg,
+    #00a7880c 100%,
+    #00a78821 50%,
+    #000e3111 100%
+  );
+  animation: glowAnimation 2s infinite alternate;
+}
+
+@keyframes glowAnimation {
+  from {
+    text-shadow: 0 0 50px rgba(40, 255, 191, 0.8), 0 0 50px rgba(36, 226, 163, 0.8), 0 0 50px rgba(19, 255, 204, 0.8);
+  }
+  to {
+    text-shadow: 0 0 5px rgba(28, 240, 187, 0.8), 0 0 5px rgba(39, 250, 180, 0.8), 0 0 5px rgba(28, 255, 198, 0.8);
+  }
+}
+
+p {
+    text-align: justify;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif; 
+    font-size: 12px; 
+    letter-spacing: 2px; 
+    line-height: 1.5; 
+    color: #ffffff; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+}
+
+
+  @keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
+
+.animated-button {
+  animation: pulse 2s infinite;
+  
+  
+}
+
+
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-container {
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .form-container {
+    padding: 0 20px;
+  }
+
+  iframe {
+    height: 200px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .form-container {
+    padding: 0;
+  }
+
+  .logo-left {
+    width: 40px; 
+    max-width: 100%;
+  }
+
+  .logo-right {
+    width: 15px; 
+    max-width: 100%; 
+    top: -10px;
+    right: 5px; 
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  
+  .logo-left {
+    width: 80px;
+    top: 10px;
+    right: 80px;
+    transform: translateX(5%);
+  }
+
+  .logo-right {
+    width: 25px;
+    top: 3px;
+    right: 22px;
+    transform: translateX(20%);
+    
+  }
+
+  h1 {
+    margin-top: 5px;
+    font-size: 5px;
+    transform: translateY(6px); 
+    left: 20px;
+ 
+  }
+}
+
+
+@media (max-width: 480px) {
+  
+  .logo-left {
+    width: 80px;
+    top: 10px;
+    right: 80px;
+    transform: translateX(5%);
+  }
+
+  .logo-right {
+    width: 25px;
+    top: 3px;
+    right: 22px;
+    transform: translateX(20%);
+    
+  }
+    
+
+  }
+
+  
+  h1 {
+    top: 20px;
+    font-size: 20px;
+  }
+
+
+
+@media (max-width: 768px) {
+ 
+  .form-container {
+    padding: 0 5%;
+    margin-right: 5%;
+    
+    
+  }
+
+
+  .form-container button {
+    width: 100%;
+    margin-left: 2%; 
+    display: block; 
+    
+  }
+
+}
+
+
+@media (max-width: 480px) {
+ 
+  .form-container {
+    padding: 0 5%;
+    margin-right: 5%;
+  }
+
+  .form-container button {
+    width: 100%;
+    margin-left: 2%; 
+    display: block; 
+  }
+}
+
+ </style>
+
+ </head>
+
+<body>
+
+  <div class="title">
+
+    <img src="../logoUt.ico" alt="Logo Left" class="logo logo-left">
+
+    <h1>Lobos-IA</h1>
+
+    <img src="../logoIa.ico" alt="Logo Right" class="logo logo-right">
+
+  </div>
+
+  <div class="content-container">
+
+    <div class="video-container">
+
+      <video width="100%" height="300" controls loop><source src="../prototipoIa.mp4" type="video/mp4"></video>
+    
+      <p>"Extendemos una cordial invitación a todos los estudiantes de la Universidad Tecnológica de San Juan del Río interesados en participar en este taller. 
+        ¡Esperamos contar con tu entusiasmo y activa participación!"</p>
+
+    </div>
+
+    <div class="form-container">
+     
+      <form action="https://formsubmit.co/carlospd.ti22@utsjr.edu.mx" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_cc" value="charlytorres911@gmail.com">
+        <input type="hidden" name="_next" value="https://graciasporregistrarte.onrender.com">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br>
+        
+        <label for="carrera">Carrera:</label>
+        <select id="carrera" name="carrera" required>
+
+            <option value="">Selecciona una carrera</option>
+            <option value="Tecnologías de la Información">Tecnologías de la Información</option>
+            <option value="Mecatrónica">Mecatrónica</option>
+            <option value="Energías Renovables">Energías Renovables</option>
+            <option value="Innovación de Negocios y Mercadotecnia">Innovación de Negocios y Mercadotecnia</option>
+            <option value="Sistemas Productivos">Sistemas Productivos</option>
+            <option value="Química">Química</option>
+            <option value="Química Farmacéutica">Química Farmacéutica</option>
+            <option value="Mantenimiento Industrial">Mantenimiento Industrial</option>
+            <option value="Ingeniería Civil">Ingeniería Civil</option>
+
+        </select><br>
+
+        <label for="numero_de_expediente">Numero de expediente:</label>
+        <input type="number" id="numero_de_expediente" name="numero_de_expediente" required pattern="\d{10}"><br>
+
+        <label for="cuatrimestre">Cuatrimestre:</label>
+        <select id="cuatrimestre" name="cuatrimestre" required>
+
+            <option value="">Selecciona un cuatrimestre</option>
+            <option value="Primero">Primer cuatrimestre</option>
+            <option value="Segundo">Segundo cuatrimestre</option>
+            <option value="Tercero">Tercer cuatrimestre</option>
+            <option value="Cuarto">Cuarto cuatrimestre</option>
+            <option value="Quinto">Quinto cuatrimestre</option>
+            <option value="Sexto">Sexto cuatrimestre</option>
+            <option value="Séptimo">Séptimo cuatrimestre</option>
+            <option value="Octavo">Octavo cuatrimestre</option>
+            <option value="Noveno">Noveno cuatrimestre</option>
+            <option value="Décimo">Décimo cuatrimestre</option>
+            <option value="Onceavo">Onceavo cuatrimestre</option>
+
+        </select><br>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="number" id="telefono" name="telefono" required pattern="\d{10}"><br>
+
+        <label for="nivel">Nivel de programación:</label>
+        <select id="nivel" name="nivel" required>
+
+            <option value="">Selecciona un nivel</option>
+            <option value="Iniciando mi viaje en la programación">Iniciando mi viaje en la programación</option>
+            <option value="Nivel Básico">Nivel Básico</option>
+            <option value="Nivel Intermedio">Nivel Intermedio</option>
+            <option value="Nivel Avanzado">Nivel Avanzado</option>
+
+        </select><br>
+
+        <button type="submit" class="animated-button" id="submit-button">Enviar Formulario</button>
+
+           </form>
+
+        </div>  
+
+      </div>   
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const form = document.getElementById('registration-form');
+    
+          form.addEventListener('submit', function (event) {
+            event.preventDefault(); 
+    
+            
+            window.location.href = 'https://graciasporregistrarte.onrender.com';
+    
+          });
+        });
+      </script>
+
+    </body>
+
+</html>
