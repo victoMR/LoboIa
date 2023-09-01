@@ -389,23 +389,26 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
+    margin: 20px;
 }
 
 .titulo-lineas {
     color: #00A788;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .lista-lineas {
     list-style: disc;
     padding-left: 20px;
     color: #ffffff;
+    
 }
 
 .linea {
     padding: 10px 0;
-    font-size: 40px;
+    font-size: 25px;
     color: #fbff02;
+    
 }
 
 .descripcion-linea {
@@ -421,11 +424,105 @@ h1 {
     align-items: flex-start;
     justify-content: flex-end;
     margin-right: 40px;
-    margin-top: -450px;
+    margin-top: -400px;
+    position: relative;
 }
 
 .imagen {
-    max-width: 400px;
+    max-width: 350px;
+    height: auto;
+}
+
+.imagen-lado::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 950px;
+    width: calc(26% + 20px);
+    height: calc(100% + 20px);
+    box-shadow:
+        inset -5px -5px rgba(255,255,255,.5),
+        inset -10px -10px rgba(255,255,255,.4),
+        inset -15px -15px rgba(255,255,255,.3),
+        inset -20px -20px rgba(255,255,255,.2),
+        inset -25px -25px rgba(255,255,255,.1),
+        inset -30px -30px rgba(255,255,255,.05);
+    animation-name: lightGlow;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes lightGlow {
+   from {
+       box-shadow:
+           inset -5px -5px rgba(17, 255, 156, 0.5),
+           inset -10px -10px rgba(17, 255, 156, 0.459),
+           inset -15px -15px rgba(17, 255, 156, 0.336),
+           inset -20px -20px rgba(17, 255, 156, 0.315),
+           inset -25px -25px rgba(17, 255, 156, 0.212),
+           inset -30px -30px rgba(17, 255, 156, 0.041);
+   }
+   
+   to {
+       box-shadow:
+
+       inset 5px 5px rgba(17, 255, 156, 0.5),
+           inset 10px 10px rgba(17, 255, 156, 0.459),
+           inset 15px 15px rgba(17, 255, 156, 0.336),
+           inset 20px 20px rgba(17, 255, 156, 0.315),
+           inset 25px 25px rgba(17, 255, 156, 0.212),
+           inset 30px 30px rgba(17, 255, 156, 0.041);
+
+   }
+}
+
+
+.cursos {
+  
+  background-image: linear-gradient(#000E31, #00A788);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 220px; 
+    margin-left: 20px; 
+    margin-right: 20px; 
+}
+
+.titulo-cursos {
+    color: #00A788;
+    font-size: 30px;
+}
+
+.lista-cursos {
+    list-style: disc;
+    padding-left: 20px;
+    color: #ffffff;
+}
+
+.subtitulos {
+    padding: 10px 0;
+    font-size: 25px;
+    color: #fbff02;
+}
+
+.descripcion-subtitulos {
+    color: #ffffff;
+    margin-top: 5px;
+    font-size: 12px;
+    padding: 60px 0;
+}
+
+.imagen-curso {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin-right: 40px;
+    margin-top: -400px;
+    position: relative;
+}
+
+.imagenc {
+    max-width: 350px;
     height: auto;
 }
 
@@ -550,8 +647,30 @@ h1 {
     <div class="imagen-lado">
         <img src="../IAIMAGE.jpg" alt="Imagen al lado" class="imagen">
     </div>
-    
 
+
+    <div class="cursos">
+        <h3 class="titulo-cursos">CURSOS:</h3>
+        <ul class="lista-cursos">
+            <li class="subtitulos">
+                PYTHON
+              
+            </li>
+            <li class="subtitulos">
+                DATA SCIENCE
+                
+            </li>
+            <li class="subtitulos">
+                DATA ANALYLICS
+                <p class="descripcion-subtitulos">Al registrarse como miembros del taller de Lobos IA, tendrán derecho a cursar varios cursos estos
+                  totalmente gratis</p>
+                  
+            </li>
+        </ul>
+    </div>
+    <div class="imagen-curso">
+        <img src="" alt="Imagen del curso" class="imagenc">
+    </div>
 
       <script>
         document.addEventListener('DOMContentLoaded', function () {
