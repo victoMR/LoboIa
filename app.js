@@ -1,23 +1,27 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+const session = require('express-session');
 
-const app = express();
-const port = 3000;
+dotenv.config();
 
+var app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(session({
+    secret: process.env.SECRETO_SESSION,
+    resave: true,
+    saveUninitialized: true
+}));
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
 
-app.post('/register', (req, res) => {
-  const registrationData = req.body;
-  console.log('Registration data:', registrationData);
-  
-  res.json({ message:'¡Registro completado con éxito! Hemos recibido tus datos. Próximamente nos pondremos en contacto contigo para proporcionarte información detallada sobre los horarios del taller.' });
-});
+const port = process.env.PORT || 8181;
+
+const usersRouter = require('./routes/users');
+app.use('/public', express.static('public'));
+app.use('/', usersRouter);
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);

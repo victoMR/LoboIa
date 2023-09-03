@@ -1,0 +1,34 @@
+body {
+  background-color: #f4f4f4;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.content_form {
+  max-width: 800px;
+}
+
+.curse_tit {
+  color: black;
+}
+
+.card-title,
+.card-text {
+  color: #ffffff;
+}
+
+.form-control,
+.form-select,
+.btn {
+  border-radius: 20px;
+}
+
+.btn {
+  width: 200px;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+}

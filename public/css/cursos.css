@@ -1,0 +1,40 @@
+.ss {
+  background-color: #465548;
+}
+.container.cont_cursos {
+  max-width: 900px;
+  background-color: #465548; /* Color de fondo añadido */
+  padding: 20px; /* Espacio interno para que el contenido no esté pegado a los bordes */
+  border-radius: 15px; /* Esquinas redondeadas */
+}
+
+h2 {
+  color: #333;
+}
+
+.card {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.5em;
+  color: #007bff;
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+}

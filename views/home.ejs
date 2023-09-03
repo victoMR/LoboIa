@@ -1,0 +1,137 @@
+<%- include("templates/index") %>
+<link rel="stylesheet" href="/public/css/home.css" />
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img
+        src="/public/img/logoUt.ico"
+        alt="Logo"
+        width="120"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#proyectos">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#cursos">Cursos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#inscripcion">Inscripción</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">Contactanos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid full-height parallax">
+  <div class="overlay"></div>
+  <div class="content-wrapper d-flex justify-content-center align-items-center">
+    <div class="row w-100">
+      <div class="col-lg-6 offset-lg-1 col-md-8">
+        <h1 class="display-4 font-weight-bold text-yellow">Lobos IA</h1>
+        <p class="lead">
+          EXTENDEMOS UNA CORDIAL INVITACIÓN A TODOS LOS ESTUDIANTES DE LA
+          UNIVERSIDAD TECNOLÓGICA DE SAN JUAN DEL RÍO INTERESADOS EN PARTICIPAR
+          EN ESTE TALLER. ¡ESPERAMOS CONTAR CON TU ENTUSIASMO Y ACTIVA
+          PARTICIPACIÓN!
+        </p>
+      </div>
+      <div class="col-lg-4 col-md-3 text-center">
+        <img
+          src="/public/img/aniversario.ico"
+          alt="Imagen Institucional"
+          class="img-fluid animated bounceInRight"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- División con el SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path
+    fill="#465548"
+    fill-opacity="1"
+    d="M0,192L80,192C160,192,320,192,480,165.3C640,139,800,85,960,85.3C1120,85,1280,139,1360,165.3L1440,192L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+  ></path>
+</svg>
+
+<div class="video-section">
+  <div class="video-container">
+    <video
+      id="myVideo"
+      loop
+      autoplay
+      muted
+      playsinline
+      title="Video intro"
+      lang="es"
+    >
+      <source src="/public/movies/prototipoIa.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="text-center mt-2">
+    <button class="sound-btn" onclick="toggleMute()">Sonido</button>
+  </div>
+</div>
+
+<div class="back-to-top">
+  <a href="#" class="back-to-top">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopButton = document.querySelector(".back-to-top");
+
+    // Mostrar el botón cuando se desplaza hacia abajo
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        backToTopButton.style.opacity = "1";
+      } else {
+        backToTopButton.style.opacity = "0";
+      }
+    });
+
+    // Volver al inicio cuando se hace clic en el botón
+    backToTopButton.addEventListener("click", function (event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  function toggleMute() {
+    var video = document.getElementById("myVideo");
+    if (video.muted) {
+      video.muted = false;
+    } else {
+      video.muted = true;
+    }
+  }
+</script>
+
+<%- include("proyects") %>
+<br /><br />
+<%- include("cursos") %> <%- include("inscripcion") %> <%-
+include("templates/footer") %>
